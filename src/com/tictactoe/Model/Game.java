@@ -6,8 +6,14 @@ package com.tictactoe.Model;
 public class Game {
 
 
-
     private String[][] field;
+
+    public String getSign() {
+        return sign;
+    }
+
+    private String sign;
+
 
     public String[][] getField() {
 
@@ -16,6 +22,12 @@ public class Game {
 
     public String[][] createField() {
         field = new String[3][3];
+
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field.length; j++) {
+                field[i][j] = String.valueOf(i) + " " + String.valueOf(j);
+            }
+        }
 
 //        field[0][0] = "1";
 //        field[0][1] = "2";
@@ -33,33 +45,56 @@ public class Game {
 
         return field;
     }
-
-    public void putSomethingToTable(){
-    field[0][0] = "xxxxxx";
-
-    }
-}
-
-
-
-//public String makeMove(int x, int y, int player){
-//           String sign = null;
 //
-//        if(player == 1){
-//            sign = "X";
-//        }
-//        else if(player ==2){
-//            sign = "Y";
-//        }
+//    public void putSomethingToTable(){
+//    field[0][0] = "x";
+//
+//    }
 
 
-       // if(field[x][y] == null){
-           // return field[x][y] = sign;
+    public String makeMove(int x, int y, int player) {
 
-        //}
 
-    //return false;
-//}
+        if (!field[x][y].equals(" X ") && !field[x][y].equals(" Y ")) {
+            if (player == 1) {
+                sign = " X ";
+            } else if (player == 2) {
+                sign = " O ";
+            }
+            field[x][y] = sign;
+            return field[x][y];
+        } else {
+            return
+                    "This position is taken! Choose different one";
+        }
+        }
+
+
+    public String seekForWinner(int x, int y){
+int j =0;
+int counter  =0;
+        if (field[x][y].equals(" X ") || field[x][y].equals(" Y ")){
+
+            for (int i = 0; i <field.length-1 ; i++) {
+
+                if(field[j][i].equals(" X ")){
+
+
+                    counter++;
+                }
+
+
+
+            }
+
+        }
+if (counter == 3){
+    return Integer.toString(counter);
+}
+        return Integer.toString(counter);
+    }
+
+}
 
 
 

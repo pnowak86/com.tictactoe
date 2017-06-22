@@ -8,25 +8,24 @@ import com.tictactoe.Model.Game;
 public class Printer {
 
 
-    public void printer(){
-        Game game = new Game();
-        String[][] temp = game.getField();
+    public void showTable(String[][] table){
+       
 
         //game.getField();
         //int i;
         int j = 0;
-        for (int k = 0; k <  temp.length ; k++) {
-            System.out.print(" " + temp[j][k] +" ");
-            if(k <temp.length-1){
+        for (int k = 0; k <  table.length ; k++) {
+            System.out.print(" " + table[j][k] +" ");
+            if(k <table.length-1){
                 System.out.print(" | ");
             }
         }
         System.out.println();
-        for (int k = 0; k < temp.length -1 ; k++) {
+        for (int k = 0; k < table.length -1 ; k++) {
 
-            System.out.print( "  -  " + "  +  ");
+            System.out.print( "  - " + "  + ");
 
-            if(k==temp.length-2){
+            if(k==table.length-2){
                 System.out.print(" - ");
                 System.out.println();
             }
@@ -34,35 +33,34 @@ public class Printer {
         j++;
 
 
-        for (int k = 0; k < temp.length ; k++) {
-            System.out.print(" " + temp[j][k] +" ");
-            if(k <temp.length-1){
+        for (int k = 0; k < table.length ; k++) {
+            System.out.print(" " + table[j][k] +" ");
+            if(k <table.length-1){
                 System.out.print(" | ");
             }
         }
         System.out.println();
-        for (int k = 0; k < temp.length -1 ; k++) {
+        for (int k = 0; k < table.length -1 ; k++) {
 
-            System.out.print( "  -  " + "  +  ");
+            System.out.print( "  - " + "  + ");
 
-            if(k==temp.length-2){
+            if(k==table.length-2){
                 System.out.print(" - ");
                 System.out.println();
             }
         }
         j++;
 
-        for (int k = 0; k < temp.length ; k++) {
-            System.out.print(" " + temp[j][k] +" ");
-            if(k <temp.length-1){
+        for (int k = 0; k < table.length ; k++) {
+            System.out.print(" " + table[j][k] +" ");
+            if(k <table.length-1){
                 System.out.print(" | ");
             }
         }
-
-
-
-
-
-
+        System.out.println();
+        System.out.println();
     }
+
+
+
 }
