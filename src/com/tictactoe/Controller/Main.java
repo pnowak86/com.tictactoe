@@ -57,7 +57,7 @@ public class Main {
             sc.nextLine();
             System.out.println(game.makeMove(x, y, player));
             printer.showTable(game.getField());
-            System.out.println(game.seekForWinner(x,y));
+            System.out.println(game.seekForWinner());
     }
 }
 

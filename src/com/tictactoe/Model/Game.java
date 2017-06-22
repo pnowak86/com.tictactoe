@@ -70,29 +70,23 @@ public class Game {
         }
 
 
-    public String seekForWinner(int x, int y){
+    public String seekForWinner(){
 int j =0;
 int counter  =0;
-        if (field[x][y].equals(" X ") || field[x][y].equals(" Y ")){
 
-            for (int i = 0; i <field.length-1 ; i++) {
 
+            for (int i = 0; i <field.length ; i++) {
                 if(field[j][i].equals(" X ")){
 
-
                     counter++;
-                }
-
-
-
             }
 
         }
-if (counter == 3){
-    return Integer.toString(counter);
+
+return Integer.toString(counter);
+
 }
-        return Integer.toString(counter);
-    }
+
 
 }
 
