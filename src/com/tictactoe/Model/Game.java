@@ -7,12 +7,24 @@ public class Game {
 
 
     private String[][] field;
+    private String sign;
+
+    public int getY() {
+        return y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    private  int y;
+    private int x;
 
     public String getSign() {
         return sign;
     }
 
-    private String sign;
+
 
 
     public String[][] getField() {
@@ -21,10 +33,13 @@ public class Game {
     }
 
     public String[][] createField() {
-        field = new String[5][5];
+        y = 3;
+        x = 3;
+        field = new String[x][y];
 
-        for (int i = 0; i < field.length; i++) {
-            for (int j = 0; j < field.length; j++) {
+
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y; j++) {
                 field[i][j] = String.valueOf(i) + " " + String.valueOf(j);
             }
         }
@@ -62,41 +77,87 @@ public class Game {
                 sign = " O ";
             }
             field[x][y] = sign;
-            return field[x][y];
+
+            return "You made a move! " + sign + "on " + x + " " + y;
         } else {
             return
+
                     "This position is taken! Choose different one";
         }
-        }
+    }
 
 
-    public String seekForWinner(){
+    public String seekForWinner(String[][] table, int x, int y) {
+        int i = 0;
+        int j = 0;
+        int counter =0;
+        String winner = null;
 
-        int j =0;
-int counter  =0;
-String winner = null;
 
-        for (j = 0; j < field.length; j++) {
-            for (int i = 0; i <field.length ; i++) {
-                if(field[j][i].equals(" X ")){
 
-                    counter++;
-                }
-
-        }
-
-if (counter==3)
-{
-    winner = "We have a winner! X wins!";
+            for ( i = 0; i < x ; i++) {
+               while(j<x){
+                if(table[j][i].equals(" X ")){
+    counter++;
 }
-        }
+j++;
+            }}
+        return Integer.toString(counter);
+//                if (table[j][i].equals(" X ")){
+//                    if( i==0){
+//                        if(table[j][i + 1].equals(" X ") && table[j][i+2].equals(" X ") ){
+//                            winner = "winner!";
+//                        }}
+//                        if(i==x-1) {
+//                            if (table[j][i-2].equals(" X ") && table[j][i-1].equals(" X ")){
+//                                winner = "winner2!";
+//                            }
+//                        }
+////                        else{
+////                            if (table[j][i-1].equals(" X ") && table[j][i+1].equals(" X ")){
+////                                winner = "winner3!";
+////                            }
+////                        }
+//                }
 
-return winner;
-
-}
 
 
-}
+    }
+//                        if (i==x){
+//                            if(table[j][i-2].equals(" X ") && table[j][i-1].equals(" X ")){
+//                                winner ="winner2!";
+//                            }
+//                        }
+//                        else{
+//                            if(table[j][i-1].equals(" X ") && table[j][i+1].equals(" X ")){
+//                                winner ="winner3";
+//                            }
+                        }
+
+//                if (table[j][i].equals(" X ")){
+//                    if (i == 0){
+//                        if(table[j][i+1].equals(" X ") || table[j][i+2].equals(" X ")){
+//                            counter++;
+//                        }}
+//                        else if(i==x-1){
+//                            if(table[j][i-1].equals(" X ") || table[j][i-2].equals(" X ")){
+//                                counter++;
+//                        }}
+//                        else{
+//                            if(table[j][i-1].equals(" X ") || table[j][i+1].equals(" X ") ){
+//                                counter++;}
+//                        }
+//                    }
+
+
+
+
+//            if (counter == 3) {
+//                winner = "We have a winner! X wins!";
+//                System.out.println(counter);
+//            }
+
+
 
 
 

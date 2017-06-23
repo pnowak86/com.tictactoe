@@ -8,28 +8,28 @@ import com.tictactoe.Model.Game;
 public class Printer {
 
 
-    public void showTable(String[][] table){
+    public void showTable(String[][] table, int x, int y){
 
 
 
         //game.getField();
         //int i;
         int j = 0;
-        while(j<table.length) {
+        while(j<x) {
 
-            for (int k = 0; k < table.length; k++) {
+            for (int k = 0; k < y; k++) {
                 System.out.print(" " + table[j][k] + " ");
-                if (k < table.length - 1) {
+                if (k < y - 1) {
                     System.out.print(" | ");
                 }
             }
             if(j<table.length-1){
             System.out.println();
-            for (int k = 0; k < table.length-1 ; k++) {
+            for (int k = 0; k < y-1 ; k++) {
 
                 System.out.print("  - " + "  + ");
 
-                if (k == table.length - 2) {
+                if (k == y - 2) {
                    System.out.print(" - ");
                     System.out.println();
                 }

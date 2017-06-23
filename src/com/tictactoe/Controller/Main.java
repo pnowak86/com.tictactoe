@@ -38,7 +38,7 @@ public class Main {
     switch (option) {
         case 1:
             System.out.println("All fields are shown like that: X Y");
-            printer.showTable(game.getField());
+            printer.showTable(game.getField(), game.getX(), game.getY());
             option =0;
             break;
         case 2:
@@ -56,8 +56,8 @@ public class Main {
             player = sc.nextInt();
             sc.nextLine();
             System.out.println(game.makeMove(x, y, player));
-            printer.showTable(game.getField());
-            System.out.println(game.seekForWinner());
+            printer.showTable(game.getField(), game.getX(), game.getY());
+            System.out.println(game.seekForWinner(game.getField(),game.getX(),game.getY()));
     }
 }
 
