@@ -21,7 +21,7 @@ public class Game {
     }
 
     public String[][] createField() {
-        field = new String[3][3];
+        field = new String[5][5];
 
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field.length; j++) {
@@ -71,19 +71,27 @@ public class Game {
 
 
     public String seekForWinner(){
-int j =0;
+
+        int j =0;
 int counter  =0;
+String winner = null;
 
-
+        for (j = 0; j < field.length; j++) {
             for (int i = 0; i <field.length ; i++) {
                 if(field[j][i].equals(" X ")){
 
                     counter++;
-            }
+                }
 
         }
 
-return Integer.toString(counter);
+if (counter==3)
+{
+    winner = "We have a winner! X wins!";
+}
+        }
+
+return winner;
 
 }
 
