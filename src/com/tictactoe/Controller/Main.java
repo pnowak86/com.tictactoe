@@ -47,6 +47,8 @@ public class Main {
             int player;
             System.out.println("Please type in where you wanna write a sign:");
             System.out.println("X:");
+
+
             x = sc.nextInt();
             sc.nextLine();
             System.out.println("Y:");
@@ -57,7 +59,11 @@ public class Main {
             sc.nextLine();
             System.out.println(game.makeMove(x, y, player));
             printer.showTable(game.getField(), game.getX(), game.getY());
-            System.out.println(game.seekForWinner(game.getField(),game.getX(),game.getY()));
+            System.out.println("check if won" + game.seekForWinner());
+            System.out.println("check for tie " +game.checkIfTie());
+            if(game.seekForWinner() || game.checkIfTie()){
+                option =3;
+            }
     }
 }
 
